@@ -23,7 +23,7 @@ symlinks the contents of the specified package as the first argument.
 
 My configs directory looks as follows:
 
-```bash{2}
+```bash
 ➜ tree -L 4 -a -I .git ~/configs
 /home/matt/configs
 ├── compton
