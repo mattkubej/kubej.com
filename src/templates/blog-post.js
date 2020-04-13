@@ -47,6 +47,22 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           }}
         />
         <footer>
+          <h3
+            style={{
+              fontFamily: 'Montserrat, sans-serif',
+              marginTop: 0,
+            }}
+          >
+            <Link
+              style={{
+                boxShadow: 'none',
+                color: 'inherit',
+              }}
+              to="/"
+            >
+              {siteTitle}
+            </Link>
+          </h3>
           <Bio />
         </footer>
       </article>
