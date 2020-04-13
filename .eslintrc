@@ -27,5 +27,6 @@
   },
   "globals": {
     "__PATH_PREFIX__": true
-  }
+  },
+  "ignorePatterns": ["public/"]
 }
