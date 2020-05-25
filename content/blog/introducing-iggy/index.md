@@ -1,20 +1,20 @@
 ---
-title: Small task for iggy 
-date: "2020-05-12T01:07:02Z"
+title: Small task for iggy
+date: '2020-05-12T01:07:02Z'
 description: Quickly generate .gitignore files
 ---
 
-Often when I create projects I end up copying `.gitignore` files from past 
-projects or finding one on GitHub.  Even though this task may take a matter of 
+Often when I create projects I end up copying `.gitignore` files from past
+projects or finding one on GitHub. Even though this task may take a matter of
 minutes, it can add up to a sizable amount of time as I create more projects.  
-Similarly, I often find myself buried within my terminal, so I desired a small 
-application to this accomplish for me.  After a quick google search I did not 
-find an application that looked overly appealing to me, so I tossed together 
-iggy quickly.  Even though simple, this application will allow me to build an 
-inventory of `.gitignore` files by language and generate them into my current 
+Similarly, I often find myself buried within my terminal, so I desired a small
+application to this accomplish for me. After a quick google search I did not
+find an application that looked overly appealing to me, so I tossed together
+iggy quickly. Even though simple, this application will allow me to build an
+inventory of `.gitignore` files by language and generate them into my current
 directory.
 
-Listed below is an example usage of iggy to generate a `.gitignore` for a 
+Listed below is an example usage of iggy to generate a `.gitignore` for a
 JavaScript or TypeScript project.
 
 ```bash
@@ -54,7 +54,7 @@ dist/**/*
 yarn.lock
 ```
 
-I only included a few `.gitignore` files for languages I use most frequently 
+I only included a few `.gitignore` files for languages I use most frequently
 and plan to build up the inventory as necessary over time.
 
 Listed below shows the currently available `.gitignore` files in iggy.

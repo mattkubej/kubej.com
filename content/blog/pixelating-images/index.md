@@ -5,7 +5,7 @@ description: Quick and easy pixel art
 ---
 
 Recently, I have started tinkering around and building a game on the side, but
-quickly found I needed sprites.  I thought pixel art would be great for this, 
+quickly found I needed sprites. I thought pixel art would be great for this,
 but found doing this by hand can be rather time consuming and I tend to
 produce mixed results of quality. So, I figured I could try to write a small
 program that could assist me with creating pixel art. Ultimately, it would
@@ -17,21 +17,21 @@ Illustrated below is an example input and output.
 ![input](assets/input.png)
 ![output](assets/output.png)
 
-I broke this down into a number of subproblems, which were new to me within 
-Golang.  After solving each subproblem, the combined steps resulted in an 
+I broke this down into a number of subproblems, which were new to me within
+Golang. After solving each subproblem, the combined steps resulted in an
 algorithm for converting an image to a pixelated representation.
 
 The following highlights the subproblems and in combination the algorithm.
 
 1. Consume an image
-2. Build a data structure representing the image 
+2. Build a data structure representing the image
 3. Use the data structure as input to produce an pixelated output representation
 4. Save the pixelated output representation to disk
 
 ## Consume an image
 
-To begin working with the input image, it simply required registering the 
-image format with `image.RegisterFormat` and invoking `os.Open` to read the 
+To begin working with the input image, it simply required registering the
+image format with `image.RegisterFormat` and invoking `os.Open` to read the
 image from the file system.
 
 ```go
@@ -47,10 +47,10 @@ defer file.Close()
 
 ## Building the data structure
 
-I settled on iterating across the input image and constructing a 
-two-dimensional array of Pixel structs.  The Pixel struct served as a 
-[RGBA color model](https://en.wikipedia.org/wiki/RGBA_color_model) 
-representation.  Upon completion, I had an in-memory representation of the 
+I settled on iterating across the input image and constructing a
+two-dimensional array of Pixel structs. The Pixel struct served as a
+[RGBA color model](https://en.wikipedia.org/wiki/RGBA_color_model)
+representation. Upon completion, I had an in-memory representation of the
 image, which I could use for further processing.
 
 ```go
@@ -62,8 +62,8 @@ type Pixel struct {
 }
 ```
 
-The following `getPixels` function receives a file (i.e. the input image) as 
-input, then iterates across the max width and max height and converts the 
+The following `getPixels` function receives a file (i.e. the input image) as
+input, then iterates across the max width and max height and converts the
 color at each pixel into a Pixel struct to build the two-dimensional array.
 
 ```go
@@ -104,12 +104,12 @@ func getPixels(file io.Reader) ([][]Pixel, error) {
 
 ## Pixelating
 
-To pixelate the data representation of the image, I effectively dissected the 
-image into square regions based on the provided `blockSize`.  I represented 
-these regions in a separate two-dimensional array.  Essentially, I collected 
-and averaged the pixels within each region to produce a color representation 
-for that region.  Subsequently, I use the average pixels two-dimensional array 
-to build an image of the same size as the input image by filling each region 
+To pixelate the data representation of the image, I effectively dissected the
+image into square regions based on the provided `blockSize`. I represented
+these regions in a separate two-dimensional array. Essentially, I collected
+and averaged the pixels within each region to produce a color representation
+for that region. Subsequently, I use the average pixels two-dimensional array
+to build an image of the same size as the input image by filling each region
 with the average color to provide a pixelated effect.
 
 Listed below shows the `pixelate` function.
@@ -142,12 +142,12 @@ func pixelate(pixels [][]Pixel, blockSize int) [][]Pixel {
 }
 ```
 
-## Save the pixelated representation 
+## Save the pixelated representation
 
-Lastly, I needed to turn the two-dimensional array representing the pixelated 
-image into an image file on the disk.  This required constructing a blank 
-image, then iterating across the two-dimensional array and setting each pixel 
-with `img.Set`.  To write the file to disk, I created a new file with 
+Lastly, I needed to turn the two-dimensional array representing the pixelated
+image into an image file on the disk. This required constructing a blank
+image, then iterating across the two-dimensional array and setting each pixel
+with `img.Set`. To write the file to disk, I created a new file with
 `os.OpenFile` and encode write the image to the file with `png.Encode`.
 
 Listed below shows the entire implementation for `outputImg`.
@@ -185,8 +185,8 @@ func outputImg(pixels [][]Pixel) {
 
 ## Try it out
 
-I created a small implementation of this called pxl8, which provides a command 
-line interface for creating pixelated implementations with a variable block 
+I created a small implementation of this called pxl8, which provides a command
+line interface for creating pixelated implementations with a variable block
 size.
 
 You can find pxl8 at: [https://github.com/kubejm/pxl8](https://github.com/kubejm/pxl8)
