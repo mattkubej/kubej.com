@@ -25,8 +25,8 @@ The following highlights the subproblems and in combination the algorithm.
 
 1. Consume an image
 2. Build a data structure representing the image
-3. Use the data structure as input to produce an pixelated output representation
-4. Save the pixelated output representation to disk
+3. Use the data structure as input to produce a pixelated representation
+4. Save the pixelated representation to disk
 
 ## Consume an image
 
