@@ -1,7 +1,7 @@
 ---
 title: Pixelating images
 date: '2020-05-25T19:08:54Z'
-description: Quick and easy pixel art
+description: Transform images to pixel art
 ---
 
 Recently, I have started tinkering around and building a game on the side, but
