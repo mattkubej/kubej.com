@@ -11,6 +11,10 @@ body {
   background-color: var(--bg);
 }
 
+.gatsby-resp-image-image {
+  box-shadow: none !important;
+}
+
 /*
  * prism-material-dark
  * snagged from https://github.com/PrismJS/prism-themes/
