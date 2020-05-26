@@ -186,7 +186,6 @@ func outputImg(pixels [][]Pixel) {
 ## Try it out
 
 I created a small implementation of this called pxl8, which provides a command
-line interface for creating pixelated implementations with a variable block
-size.
+line interface for pixelating images with a variable block size.
 
 You can find pxl8 at: [https://github.com/kubejm/pxl8](https://github.com/kubejm/pxl8)
