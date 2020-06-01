@@ -68,6 +68,14 @@ const Layout = ({ location, title, children }) => {
         >
           github
         </a>
+        {' • '}
+        <a
+          href="https://twitter.com/mattkubej"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          twitter
+        </a>
       </footer>
     </div>
   )
