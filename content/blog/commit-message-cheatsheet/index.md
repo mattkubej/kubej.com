@@ -32,15 +32,15 @@ TYPES
 
 EXAMPLES
   - Commit message with no body
-    docs: correct spelling of CHANGELOG
+    docs: add install instructions to README
 
   - Commit message with scope
-    feat(lang): add polish language
+    feat(search): add filter capability
 
   - Commit message with both '!' and breaking change footer
-    refactor!: drop support for Node 6{NC}
+    refactor!: drop support for Node 11 and lower
 
-    BREAKING CHANGE: refactor to use JavaScript features not available in Node 6.
+    BREAKING CHANGE: using features introduced in Node 12
 ```
 
 You can find ccc at: [https://github.com/kubejm/ccc](https://github.com/kubejm/ccc)
